@@ -1,0 +1,130 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #B0DFF5, #FFC2D1);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    color: white;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+nav button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.5);
+}
+
+nav button:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    background: white;
+    padding: 50px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dashboard-container h2 {
+    font-size: 30px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* Panel Styles */
+.panel {
+    background: #ecf0f1;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel h3 {
+    margin: 0 0 20px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.panel a {
+    display: block;
+    background: #3498db;
+    color: white;
+    padding: 14px;
+    margin: 12px auto;
+    text-decoration: none;
+    border-radius: 8px;
+    width: 85%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 5px 12px rgba(52, 152, 219, 0.5);
+}
+
+.panel a:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 90%;
+        padding: 30px;
+    }
+    
+    .panel a {
+        width: 100%;
+    }
+}

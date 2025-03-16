@@ -1,0 +1,93 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a static gradient from very light green to blue */
+body {
+    background: linear-gradient(135deg, #B6FFB3, #6BCEFF); /* Very light green to blue */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container styling */
+.container {
+    background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid #FF6F61; /* Vibrant border color */
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #FFBC42; /* Yellow-orange border on focus */
+    box-shadow: 0 0 8px rgba(255, 188, 66, 0.5);
+}
+
+button {
+    padding: 14px;
+    border: none;
+    background-color: #6BCEFF; /* Light blue button */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #4DB8FF; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+a {
+    color: #FF6F61; /* Vibrant coral color for the link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FFBC42; /* Yellow-orange color on hover */
+}
