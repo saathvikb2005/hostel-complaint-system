@@ -157,3 +157,41 @@ button:hover {
         font-size: 14px;
     }
 }
+
+
+
+.dark-mode {
+    background-color: #222;
+    color: #f7f7f7;
+}
+
+
+.dark-mode .container {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+
+.dark-mode input, 
+.dark-mode textarea, 
+.dark-mode select {
+    background-color: #444;
+    color: white;
+    border-color: #888;
+}
+
+.dark-mode input:focus, 
+.dark-mode textarea:focus, 
+.dark-mode select:focus {
+    border-color: #FF6F61;
+}
+
+
+.dark-mode button {
+    background-color: #FF6F61;
+}
+
+.dark-mode button:hover {
+    background-color: #E05245;
+}

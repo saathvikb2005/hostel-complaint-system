@@ -7,11 +7,12 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #B0DFF5, #FFC2D1);
-    color: #333;
+    color: #222;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Navigation Bar */
@@ -20,111 +21,241 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #2c3e50;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
     color: white;
-    padding: 20px 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 8%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-nav h2 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: 700;
+/* Navbar Left */
+.nav-left {
+    display: flex;
+    align-items: center;
 }
 
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 12px;
+}
+
+/* Navbar Right */
+.nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+/* Buttons */
 nav button {
-    background: #e74c3c;
-    color: white;
+    background: #ffcc00;
+    color: black;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background 0.3s ease, transform 0.2s;
-    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.5);
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 8px rgba(255, 204, 0, 0.5);
 }
 
 nav button:hover {
-    background: #c0392b;
+    background: #ffb300;
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.7);
 }
 
 /* Dashboard Container */
 .dashboard-container {
-    max-width: 1000px;
-    margin: 60px auto;
+    max-width: 900px;
+    margin: 50px auto;
     background: white;
-    padding: 50px;
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .dashboard-container h2 {
     font-size: 30px;
-    color: #2c3e50;
-    margin-bottom: 25px;
+    color: #1e3c72;
     font-weight: 700;
+    margin-bottom: 20px;
 }
 
 /* Panel Styles */
 .panel {
-    background: #ecf0f1;
-    padding: 30px;
-    margin: 20px 0;
+    background: #ffffff;
+    padding: 25px;
+    margin: 15px 0;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .panel h3 {
-    margin: 0 0 20px;
-    color: #2c3e50;
-    font-weight: 600;
     font-size: 22px;
+    margin-bottom: 15px;
+    color: #1e3c72;
 }
 
+/* Panel Buttons */
 .panel a {
     display: block;
-    background: #3498db;
+    background: #007bff;
     color: white;
-    padding: 14px;
-    margin: 12px auto;
+    padding: 12px;
+    margin: 10px auto;
     text-decoration: none;
     border-radius: 8px;
-    width: 85%;
+    width: 80%;
     text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    transition: background 0.3s ease, transform 0.2s;
-    box-shadow: 0 5px 12px rgba(52, 152, 219, 0.5);
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
 }
 
 .panel a:hover {
-    background: #2980b9;
-    transform: translateY(-3px);
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.5);
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Announcements Section */
+.announcements-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.announcements-section:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.announcements-section h3 {
+    font-size: 22px;
+    color: #1e3c72;
+    font-weight: 700;
+}
+
+.announcements-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.announcements-section ul li {
+    font-size: 16px;
+    color: #444;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.announcements-section ul li:last-child {
+    border-bottom: none;
+}
+
+/* Dark Mode Fix */
+.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+.dark-mode nav {
+    background: #1a1a2e;
+}
+
+.dark-mode .dashboard-container {
+    background: #1e1e2f;
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .dashboard-container h2 {
+    color: #ffcc00; /* Bright Yellow for Visibility */
+}
+
+.dark-mode .panel {
+    background: #2c2c3e;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .panel h3 {
+    color: #ffcc00;
+}
+
+.dark-mode .panel a {
+    background: #ffcc00;
+    color: #121212;
+}
+
+.dark-mode .panel a:hover {
+    background: #e6b800;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.7);
+}
+
+.dark-mode .announcements-section {
+    background: #252540;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .announcements-section h3 {
+    color: #ffcc00; /* Bright Yellow */
+}
+
+.dark-mode .announcements-section ul li {
+    color: #eeeeee; /* Light Gray for Good Visibility */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+    }
+
     .dashboard-container {
         width: 90%;
         padding: 30px;
     }
-    
+
     .panel a {
         width: 100%;
+    }
+
+    nav button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Smooth Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

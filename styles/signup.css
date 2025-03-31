@@ -28,6 +28,13 @@ body {
     text-align: center;
 }
 
+/* Logo Styling */
+.logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+/* Heading */
 h2 {
     font-size: 26px;
     font-weight: 700;

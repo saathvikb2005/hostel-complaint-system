@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Announcements</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>📢 Hostel Announcements</h1>
+    
+    <!-- Admin Only: Add Announcement Form -->
+    <div id="adminControls" style="display: none;">
+        <h2>Add Announcement</h2>
+        <input type="text" id="title" placeholder="Enter Title" required>
+        <textarea id="message" placeholder="Enter Message" required></textarea>
+        <button id="addAnnouncement">Add</button>
+    </div>
+
+    <!-- Announcements List -->
+    <div id="announcementsList"></div>
+
+    <button id="backToDashboard">Back to Dashboard</button>
+
+    <script src="scripts/announcements.js"></script>
+</body>
+</html>

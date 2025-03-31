@@ -1,17 +1,24 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Hostel Complaint System</title>
+    <title>Login | FixMyStay</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div class="login-container">
-        <h2>Login to Your Account</h2>
+        <h2>Welcome to <span class="brand-name">FixMyStay</span></h2>
+        <p class="subtitle">Log in to manage and track your complaints</p>
         <form id="loginForm">
-            <input type="email" id="email" placeholder="Email" required />
-            <input type="password" id="password" placeholder="Password" required />
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required />
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required />
+            </div>
             <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="signup.html">Sign up here</a></p>

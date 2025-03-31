@@ -1,67 +1,51 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Hostel Complaint System</title>
-    <link rel="stylesheet" href="styles/style23.css">
-</head>
-<body>
-    <nav>
-        <h2>Hostel Complaint System</h2>
-        <button id="logout">Logout</button>
-    </nav>
-
-    <div class="dashboard-container">
-        <h2>Welcome, <span id="userRole">User</span></h2>
-
-        
-        <div id="studentPanel" class="panel">
-            <h3>Student Dashboard</h3>
-            <a href="complaint-form.html">File a Complaint</a>
-            <a href="complaints.html">View My Complaints</a>
-        </div>
-
-        
-        <div id="adminPanel" class="panel" style="display: none;">
-            <h3>Admin Dashboard</h3>
-            <a href="complaints.html">Manage Complaints</a>
-        </div>
-    </div>
-
-    <script src="scripts/dashboard.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Hostel Complaint System</title>
+    <title>Dashboard | FixMyStay</title>
     <link rel="stylesheet" href="styles/style23.css">
 </head>
 <body>
     <nav>
-        <h2>FixMyStay</h2>
-        <button id="logout">Logout</button>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="FixMyStay Logo" class="logo">
+            <!-- <h2>FixMyStay</h2> -->
+             <a href="home.html" >FixMyStay</a>
+        </div>
+        <div class="nav-right">
+            <button id="toggleDarkMode">🌙 Dark Mode</button>
+            <button id="logout">Logout</button>
+        </div>
     </nav>
 
     <div class="dashboard-container">
-        <h2>Welcome to FixMyStay<span id="userRole">User</span></h2>
+        <h2>Welcome to FixMyStay</h2>
 
         <!-- Student Panel -->
         <div id="studentPanel" class="panel">
             <h3>Dashboard</h3>
             <a href="complaint-form.html">File a Complaint</a>
             <a href="complaints.html">View My Complaints</a>
+            <a href="contacts.html">View Contacts 📞</a>
         </div>
-
+        
         <!-- Admin Panel -->
         <div id="adminPanel" class="panel" style="display: none;">
             <h3>Dashboard</h3>
             <a href="complaints.html">Manage Complaints</a>
+            <a href="contacts.html">Manage Contacts 🛠️</a>
+            <a href="announcements.html">Manage Announcements 📢</a>
         </div>
+
+        <!-- Announcements Section -->
+        <div class="announcements-section">
+            <h3>📢 Latest Announcements</h3>
+            <ul id="announcementsList">
+                <li>Loading announcements...</li>
+            </ul>
+        </div>
+        
     </div>
 
     <script src="scripts/dashboard.js"></script>

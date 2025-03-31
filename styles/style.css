@@ -1,7 +1,7 @@
-/* Google Font */
+/* Google Font
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* General Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,16 +9,16 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Background Styling */
+
 body {
-    background: linear-gradient(135deg, #A1C4FD, #C2E9FB); /* Lighter gradient for better visibility */
+    background: linear-gradient(135deg, #A1C4FD, #C2E9FB);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Login Container */
+
 .login-container {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
@@ -30,7 +30,7 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Header */
+
 h2 {
     font-size: 26px;
     color: #1e3c72;
@@ -38,11 +38,133 @@ h2 {
     font-weight: 700;
 }
 
-/* Input Fields */
+
 input {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
+    border: 2px solid #1e3c72;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #ffcc00;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.5);
+}
+
+button:hover {
+    background: #ffb300;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.7);
+}
+
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+a {
+    color: #2a5298;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffcc00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Background Styling */
+body {
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), url('../images/hostel-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Header */
+h2 {
+    font-size: 26px;
+    color: #1e3c72;
+    font-weight: 700;
+}
+
+.brand-name {
+    color: #ffcc00;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
     border: 2px solid #1e3c72;
     border-radius: 6px;
     font-size: 16px;
@@ -104,5 +226,21 @@ a:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
     }
 }

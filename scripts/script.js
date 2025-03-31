@@ -21,10 +21,14 @@ document.getElementById("loginForm").addEventListener("submit", async function (
             return;
         }
 
+        // ✅ Store token and role correctly
         localStorage.setItem("token", data.token);
-        localStorage.setItem("userRole", data.user.role);
-        // console.log("userRole", data.user.role);
-        // alert("Login successful!");
+        localStorage.setItem("userId", data.user.id); 
+        localStorage.setItem("role", data.user.role); // 🔹 Use "role" instead of "userRole"
+
+        console.log("User ID stored:", data.user.id); 
+        console.log("User Role stored:", data.user.role); // Debugging log
+
         window.location.href = "dashboard.html"; // Redirect to dashboard
     } catch (error) {
         console.error("Login request error:", error);

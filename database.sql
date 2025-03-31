@@ -30,5 +30,24 @@ desc complaints;
 select * from complaints;
 truncate complaints;
 
+CREATE TABLE announcements (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
+desc announcements;
+select * from announcements;
+truncate announcements;
 
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+desc contacts;
+select * from contacts;
+truncate contacts;

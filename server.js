@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/signup", require("./routes/signup")(db));
 app.use("/api/login", require("./routes/login")(db));
 app.use("/api/complaints", require("./routes/complaints")(db));
+app.use("/api/announcements", require("./routes/announcements")(db));
+app.use("/api/contacts", require("./routes/contacts")(db));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

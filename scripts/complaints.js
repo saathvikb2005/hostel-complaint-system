@@ -1,26 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
     let complaintTableBody = document.getElementById("complaintTableBody");
-    let userRole = localStorage.getItem("userRole")?.toLowerCase();
+    let categoryFilter = document.getElementById("categoryFilter");
+    
+    // ✅ Use "role" instead of "userRole"
+    let userRole = localStorage.getItem("role")?.toLowerCase();
     let loggedInUserId = localStorage.getItem("userId");
 
-    console.log("User Role:", userRole, "User ID:", loggedInUserId); // Debugging
+    let complaintsData = []; // Store complaints for filtering
+
+    console.log("User Role:", userRole, "User ID:", loggedInUserId);
 
     loadComplaints();
 
     function loadComplaints() {
+        document.body.classList.add("loading"); // Show loading animation
+
         fetch("http://localhost:3001/api/complaints")
             .then(response => response.json())
             .then(complaints => {
-                console.log("Complaints received:", complaints); // Debugging log
+                console.log("Complaints received:", complaints);
+                complaintsData = complaints; // Store complaints globally
                 displayComplaints(complaints);
             })
-            .catch(error => {
-                console.error("API error:", error);
+            .catch(error => console.error("API error:", error))
+            .finally(() => {
+                document.body.classList.remove("loading"); // Remove loading animation
             });
     }
 
     function displayComplaints(complaints) {
-        complaintTableBody.innerHTML = ""; // Clear table first
+        complaintTableBody.innerHTML = "";
 
         if (complaints.length === 0) {
             complaintTableBody.innerHTML = `<tr><td colspan="7" style="text-align:center;">No complaints found</td></tr>`;
@@ -28,8 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         complaints.forEach(complaint => {
+            // ✅ Ensure users only see their own complaints
             if (userRole === "user" && complaint.userId != loggedInUserId) {
-                return; // Users can only see their own complaints
+                return;
             }
 
             let row = document.createElement("tr");
@@ -45,10 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let actionsCell = row.querySelector(`#actions-${complaint.id}`);
 
+            // ✅ Show actions only for Admin
             if (userRole === "admin") {
                 addResolveDeleteButtons(actionsCell, complaint.id, false);
-            } else if (userRole === "user") {
-                addResolveDeleteButtons(actionsCell, complaint.id, true);
             }
 
             complaintTableBody.appendChild(row);
@@ -101,4 +110,14 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error:", error));
     }
+
+    // Filter complaints by category
+    categoryFilter.addEventListener("change", function () {
+        let selectedCategory = categoryFilter.value;
+        let filteredComplaints = selectedCategory === "All"
+            ? complaintsData
+            : complaintsData.filter(complaint => complaint.category === selectedCategory);
+        
+        displayComplaints(filteredComplaints);
+    });
 });
