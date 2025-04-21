@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-    // Fetch all announcements
+
     router.get("/", async (req, res) => {
         try {
             const [announcements] = await db.query("SELECT * FROM announcements ORDER BY created_at DESC");
@@ -13,7 +13,7 @@ module.exports = (db) => {
         }
     });
 
-    // Add a new announcement (Admin only)
+
     router.post("/add", async (req, res) => {
         const { title, message } = req.body;
         if (!title || !message) {
@@ -29,7 +29,7 @@ module.exports = (db) => {
         }
     });
 
-    // Delete an announcement (Admin only)
+    
     router.delete("/delete/:id", async (req, res) => {
         const { id } = req.params;
         try {

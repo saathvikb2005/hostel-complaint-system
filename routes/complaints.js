@@ -8,7 +8,7 @@ module.exports = (db) => {
             const query = "SELECT id, title, description, category, room_number AS roomNumber, status, user_id AS userId FROM complaints";
             const [complaints] = await db.execute(query);
 
-            console.log("Fetched complaints:", complaints); // Debugging log
+            console.log("Fetched complaints:", complaints); 
 
             res.json(complaints);
         } catch (error) {
@@ -22,7 +22,7 @@ module.exports = (db) => {
         try {
             const { title, description, category, roomNumber, userId } = req.body;
 
-            console.log("Received complaint data:", req.body); // Debugging log
+            console.log("Received complaint data:", req.body); 
 
             if (!title || !description || !category || !roomNumber || !userId) {
                 return res.status(400).json({ success: false, message: "All fields are required" });
@@ -34,20 +34,20 @@ module.exports = (db) => {
             `;
             const values = [title, description, category, roomNumber, userId];
 
-            console.log("Executing query:", query, values); // Debugging log
+            console.log("Executing query:", query, values); 
 
             const [result] = await db.execute(query, values);
 
-            console.log("Complaint inserted, new ID:", result.insertId); // Debugging log
+            console.log("Complaint inserted, new ID:", result.insertId); 
 
             res.status(201).json({ success: true, message: "Complaint submitted successfully!" });
         } catch (error) {
-            console.error("Complaint submission error:", error); // Log full error
+            console.error("Complaint submission error:", error); 
             res.status(500).json({ success: false, message: "Database error", error: error.message });
         }
     });
 
-    // Resolve complaint (FIXED)
+    // Resolve complaint 
     router.patch("/resolve/:id", async (req, res) => {
         const complaintId = parseInt(req.params.id);
         try {
@@ -70,7 +70,7 @@ module.exports = (db) => {
         }
     });
 
-    // Delete complaint (FIXED)
+    // Delete complaint 
     router.delete("/delete/:id", async (req, res) => {
         const complaintId = parseInt(req.params.id);
         try {

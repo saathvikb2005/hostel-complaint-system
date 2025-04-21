@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-    // ✅ Get all contacts
+    //  Get all contacts
     router.get("/", async (req, res) => {
         try {
             const [results] = await db.query("SELECT * FROM contacts");
@@ -13,7 +13,7 @@ module.exports = (db) => {
         }
     });
 
-    // ✅ Add a new contact
+    // Add a new contact
     router.post("/", async (req, res) => {
         const { name, phone, email } = req.body;
 

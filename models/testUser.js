@@ -1,5 +1,5 @@
-// models/testUser.js
-const db = require('./db'); // Make sure to import the db connection
+
+const db = require('./db');
 
 db.query(
     'INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)', 

@@ -1,4 +1,4 @@
-// routes/getComplaints.js
+
 const express = require('express');
 const Complaint = require('../models/complaint');
 const router = express.Router();

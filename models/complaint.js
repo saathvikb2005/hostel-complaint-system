@@ -1,18 +1,16 @@
 let db;
 
-// Set the database connection
 const setDb = (databaseConnection) => {
     db = databaseConnection;
 };
 
-// Complaint model
+
 const Complaint = {
     create: async (complaintData) => {
         let { userId, title, description, category, roomNumber, status } = complaintData;
 
-        // Ensure category and roomNumber are not NULL (set default if needed)
-        category = category || 'General';  // Default category
-        roomNumber = roomNumber || 'Unknown';  // Default room number
+        category = category || 'General'; 
+        roomNumber = roomNumber || 'Unknown';  
 
         if (!db) {
             console.error("❌ Error: Database connection is not established.");
